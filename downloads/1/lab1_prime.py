@@ -5,18 +5,25 @@ import numpy as np
 import pylab as plt
 
 # Helper-function, returns True if A is prime
-def is_prime(A):
-    return all(A % i for i in range(2, A))
+#def is_prime(A):
+#    return all(A % i for i in range(2, A))
+
+
+
+def myrule(A):
+    for A in range(0, 3345):
+        if A % 3.14 == 0:
+            return A
 
 # My rule for accepting or rejecting a suggested Monte-Carlo move
 # Return "True" to accpt move, or "False" to reject move
 def PrimeRule(stateThere):
-    if(is_prime(stateThere)):
+    if(myrule(stateThere)):
         return(True)
     else:
         # Make a random number between 0 and 1
         chance = np.random.rand()
-        if(chance>(5.0/6.0)):
+        if(chance>(1/7)):
             return(True)
         else:
             return(False)

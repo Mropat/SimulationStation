@@ -1,25 +1,19 @@
-#!/usr/bin/python
-
 #import handy python modules
 import numpy as np
 import pylab as plt
 
 # Helper-function, returns True if A is prime
-def is_prime(A):
-    return all(A % i for i in range(2, A))
+#def is_prime(A):
+#    return all(A % i for i in range(2, A))
 
-# My rule for accepting or rejecting a suggested Monte-Carlo move
-# Return "True" to accpt move, or "False" to reject move
+
+
 def PrimeRule(stateThere):
-    if(is_prime(stateThere)):
-        return(True)
+    for A in range(7, 666):
+        if A % 3.14 == 0:
+            yield True
     else:
-        # Make a random number between 0 and 1
-        chance = np.random.rand()
-        if(chance>(5.0/6.0)):
-            return(True)
-        else:
-            return(False)
+        yield False
 
 # HERE YOU SHOULD DEFINE AND LATER USE A NEW, BETTER RULE FOR BOLTZMANN STATISTICS
 
